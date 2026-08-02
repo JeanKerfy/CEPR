@@ -1,0 +1,9 @@
+# Fichiers texte : normalisation automatique des fins de ligne
+* text=auto
+
+# Fichiers binaires : jamais de conversion, sous peine de corruption
+*.exe binary
+*.dll binary
+*.a binary
+*.lib binary
+*.o binary

@@ -1,0 +1,19 @@
+# Executable et objets compiles
+*.exe
+*.o
+*.obj
+*.a
+
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.sln.docstates
+CEPR_VS2026/
+
+# Code::Blocks
+*.depend
+*.layout
+
+# Fichiers de donnees generes a l'execution (a exclure une fois les modules implementes,
+# sauf si vous voulez versionner un jeu de donnees de test - a decider en equipe)
+# *.dat

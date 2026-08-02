@@ -22,7 +22,7 @@ static void afficher_menu_general(void)
     int n = sizeof(options) / sizeof(options[0]);
     for (int i = 0; i < n; i++)
     {
-        DrawText(options[i], 60, 100 + i * 35, 20, BLACK);
+        DrawText(options[i], 60, 100 + i * 35, 20, RED);
     }
 }
 

@@ -67,7 +67,7 @@
     <NMakeOutput>$(ProjectDir)CEPR.exe</NMakeOutput>
     <NMakeCleanCommandLine>"$(ProjectDir)toolchain\bin\mingw32-make.exe" -C "$(ProjectDir)." clean</NMakeCleanCommandLine>
     <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
-    <NMakeIncludeSearchPath>$(ProjectDir)toolchain\include;$(ProjectDir)src;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>$(ProjectDir)toolchain\include;$(ProjectDir)src</NMakeIncludeSearchPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <NMakeBuildCommandLine>set PATH=C:\raylib\w64devkit\bin%3b%PATH% &amp;&amp; C:\raylib\w64devkit\bin\mingw32-make.exe -C "$(ProjectDir)"</NMakeBuildCommandLine>
@@ -86,7 +86,7 @@
     <NMakeOutput>$(ProjectDir)CEPR.exe</NMakeOutput>
     <NMakeCleanCommandLine>"$(ProjectDir)toolchain\bin\mingw32-make.exe" -C "$(ProjectDir)." clean</NMakeCleanCommandLine>
     <NMakePreprocessorDefinitions>NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
-    <NMakeIncludeSearchPath>$(ProjectDir)toolchain\include;$(ProjectDir)src;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeIncludeSearchPath>$(ProjectDir)toolchain\include;$(ProjectDir)src</NMakeIncludeSearchPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Manifest>
@@ -110,7 +110,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\election.h" />
-    <ClInclude Include="src\modules.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ge_BV.c" />
@@ -119,7 +118,10 @@
     <ClCompile Include="src\ge_parti.c" />
     <ClCompile Include="src\ge_votes.c" />
     <ClCompile Include="src\rapp.c" />
-    <ClCompile Include="src\velectro.c" />
+    <ClCompile Include="src\velectro.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
